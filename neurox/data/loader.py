@@ -102,7 +102,8 @@ def load_activations(
             dtype = representations[list(sentence_to_index.values())[0]].dtype
         # TODO: Check order
         for _, value in sentence_to_index.items():
-            sentence_acts = torch.FloatTensor(representations[value])
+            vals = np.array(representations[value])
+            sentence_acts = torch.FloatTensor(vals)
             num_layers, sentence_length, embedding_size = (
                 sentence_acts.shape[0],
                 sentence_acts.shape[1],

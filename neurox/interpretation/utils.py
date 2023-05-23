@@ -252,9 +252,9 @@ def create_tensors(
         dtype = activations[0].dtype
     X = np.zeros((num_tokens, num_neurons), dtype=dtype)
     if task_type == "classification":
-        y = np.zeros((num_tokens,), dtype=np.int)
+        y = np.zeros((num_tokens,), dtype=int)
     else:
-        y = np.zeros((num_tokens,), dtype=np.float32)
+        y = np.zeros((num_tokens,), dtype=float)
 
     example_set = set()
 

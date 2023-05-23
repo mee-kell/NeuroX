@@ -48,7 +48,7 @@ class TestBatchGenerator(unittest.TestCase):
             batch_data.append(
                 (
                     np.random.random((num_examples_per_batch, num_neurons)),
-                    (np.random.random((num_examples_per_batch,)) * 10).astype(np.int),
+                    (np.random.random((num_examples_per_batch,)) * 10).astype(int),
                 )
             )
 
@@ -72,13 +72,13 @@ class TestBatchGenerator(unittest.TestCase):
             batch_data.append(
                 (
                     np.random.random((num_examples_per_batch, num_neurons)),
-                    (np.random.random((num_examples_per_batch,)) * 10).astype(np.int),
+                    (np.random.random((num_examples_per_batch,)) * 10).astype(int),
                 )
             )
         batch_data.append(
             (
                 np.random.random((5, num_neurons)),
-                (np.random.random((5,)) * 10).astype(np.int),
+                (np.random.random((5,)) * 10).astype(int),
             )
         )
 

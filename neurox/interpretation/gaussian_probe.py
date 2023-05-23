@@ -89,7 +89,8 @@ class GaussianProbe:
         )
         min_eig = []
         for sigma in sigma_star:
-            eigs = torch.eig(sigma).eigenvalues[:, 0]
+            eigs = torch.linalg.eig(sigma).eigenvalues.real
+            # eigs = torch.eig(sigma).eigenvalues[:, 0]
             min_eig.append(eigs.min())
         min_eig = torch.tensor(min_eig).to(self.device)
         sigma_star[min_eig < 0] -= (
